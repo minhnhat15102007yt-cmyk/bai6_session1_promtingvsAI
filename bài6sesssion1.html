@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bài6sesssion1</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h3 id="phần-1-giải-thích-bằng-hình-ảnh-chiếc-cốc-nước-context-window--truncation">Phần 1: Giải thích bằng hình ảnh “Chiếc cốc nước” (Context Window &amp; Truncation)</h3>
+<ul>
+<li><strong>Bản chất Context Window:</strong> Bộ nhớ tạm (RAM) của AI hoạt động y hệt <strong>một chiếc cốc nước có dung tích giới hạn</strong> (ở đây là 32.000 tokens).
+<ul>
+<li><strong>Cơ chế tràn cốc (Truncation):</strong></li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>Mỗi tin nhắn qua lại giống như rót thêm nước vào cốc.</li>
+<li>Chat liên tục 40 lượt về rau củ khiến nước dâng đầy <strong>100% cốc</strong>.</li>
+<li>Khi có tin nhắn mới ở Lượt 42 rót thêm vào, chiếc cốc buộc phải <strong>đẩy phần nước cũ nhất ở đáy cốc (chính là Lượt 1 chứa tên anh B và mã đơn <code>#MTX-9988</code>) trào ra ngoài</strong> để lấy chỗ trống.</li>
+<li>Dữ liệu Lượt 1 bị cắt bỏ hoàn toàn khỏi bộ nhớ nên AI bị “quên” và gọi nhầm sang chị Mai.<br>
+### Phần 2: 2 Phương án chống “tràn cốc”<br>
+<strong>1. Thao tác của người dùng (Nhân viên CSKH):</strong></li>
+</ol>
+<ul>
+<li><strong>Chủ động mở phiên chat mới (New Chat):</strong> Cứ xong một khách hàng hoặc chuyển sang một yêu cầu hoàn toàn khác thì bấm tạo hội thoại mới để “đổ hết nước cũ đi”, tránh dồn rác vào chung một phiên.
+<ul>
+<li><strong>Nhắc lại thông tin cốt lõi (Tóm tắt):</strong> Nếu chat quá dài, thi thoảng nhắc lại tên khách và mã đơn trong câu hỏi để kéo thông tin đó lên “miệng cốc”.<br>
+<strong>2. Thiết kế hệ thống (Dành cho Dev/Kỹ sư AI):</strong></li>
+</ul>
+</li>
+<li><strong>Tách bộ nhớ ra Database ngoài (RAG / CRM):</strong> Không bắt AI tự nhớ bằng lịch sử chat nữa. Hệ thống sẽ lưu cứng <code>Tên khách</code> và <code>Mã đơn</code> vào Database riêng, rồi tự động ghim (pin) thông tin này vào đầu mỗi câu lệnh ngầm (<strong>System Prompt</strong>) gửi cho AI <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.36687em; vertical-align: 0em;"></span><span class="mrel">→</span></span></span></span></span> Dù chat 100 lượt, AI vẫn luôn thấy thông tin khách hàng ngay trước mắt.</li>
+</ul>
+</div>
+</body>
+
+</html>
